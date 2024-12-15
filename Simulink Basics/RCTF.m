@@ -1,0 +1,11 @@
+k=1;
+R= 10e3;
+c=1e-7;
+T= R*c;
+num=[0 k];
+den=[T 1];
+G=tf(num,den);
+t=0:0.1:10;
+u_parabolic = 0.5 * t.^2;
+[y,tp]=lsim(G,u_parabolic,t);
+plot(tp,y);
